@@ -1,4 +1,5 @@
 import { ProfileInterface } from "@/interfaces/profile-interface";
+import { CONSTANTS } from "@/services/config/app-config";
 import UploadFileApi from "@/services/api/auth_api/upload_file_api";
 import UpdateProfileAPI from "@/services/api/profile_api/update_profile_api";
 import { get_access_token } from "@/store/slices/auth_slice/login_slice";
@@ -295,7 +296,7 @@ const ProfileInfoCard = ({ isLoading, data, error, onRefresh }: ProfileInterface
               {uploadedFileUrl && !selectedFile && (
                 <div className="mb-3">
                   <a
-                    href={`https://careersportal.8848digitalerp.com${uploadedFileUrl}`}
+                    href={`${CONSTANTS.API_BASE_URL}${uploadedFileUrl}`}
                     target="_blank"
                     rel="noreferrer"
                     className="font-size-3 text-primary"
